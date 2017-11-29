@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0d86565b-b234-41ae-9ec4-f11233a93e8b" name="Home" url="http://c97.me">
+        <fileTransfer host="c97.me" port="65535" privateKey="C:\Users\Corey\Documents\ssh\desktop.ppk" rootFolder="/srv/http" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="65535" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
