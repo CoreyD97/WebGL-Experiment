@@ -11,7 +11,7 @@ var options = {
     // count: 512,
     particleSpeedMult: 0.01,
     drag: 0.0165,
-    size: 0.01,
+    size: 0.03,
     color: [255,255,255],
 
     boxSize: 20,
