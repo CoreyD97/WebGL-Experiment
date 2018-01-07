@@ -56,7 +56,7 @@ function init() {
     scene.add(cube);
 
     var cometgeo = new THREE.SphereGeometry(0.25, 10, 10, 0, Math.PI * 2, 0, Math.PI);
-    var comettexture = new THREE.TextureLoader().load('img/phobos2k.jpg');
+    var comettexture = new THREE.TextureLoader().load('./img/phobos2k.jpg');
     var cometmat = new THREE.MeshBasicMaterial({transparent: true, map: comettexture});
     comet = new THREE.Mesh(cometgeo, cometmat);
     comet.velocity = new THREE.Vector3(Math.random(), Math.random(), Math.random());
@@ -64,7 +64,7 @@ function init() {
     scene.add(comet);
 
     var skyboxmap = ["right1.png", "left2.png", "top3.png", "bottom4.png", "front5.png", "back6.png"];
-    var skybox = new THREE.CubeTextureLoader().setPath('img/background/nebula_').load(skyboxmap);
+    var skybox = new THREE.CubeTextureLoader().setPath('./img/background/nebula_').load(skyboxmap);
     skybox.format = THREE.RGBFormat;
     skybox.mapping = THREE.CubeReflectionMapping;
     scene.background = skybox;
@@ -294,6 +294,7 @@ function doGravity(particleNo, gravSource){
     var particlePosition = new THREE.Vector3(particleGeometry.attributes.position.array[particleNo*3],particleGeometry.attributes.position.array[particleNo*3+1],particleGeometry.attributes.position.array[particleNo*3+2]);
     var dist = particlePosition.distanceTo(gravSource.position);
     if(dist == 0) return;
+    //Gm / r^2 = a
     var acceleration = options.gravity * options.boxSize/2 * 0.066726 / Math.pow(dist,2);
     if(acceleration > 1/options.gravitySize){
         var vecToCentre = new THREE.Vector3().subVectors(particlePosition, gravSource.position);
